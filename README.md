@@ -1,7 +1,9 @@
 # AoW-RT-Bot
-> A personal bot designed with PyAutoGUI
+> A personal bot for Art of War: Red Tides AI
 
 This is part of my 'study-the-examples' series, of how certain things can be done in python through 3rd-party libraries. Scripts are designed as accord to me, and not for client use. You can however download and edit them to work on your computer.
+
+Note that this Bot is designed personally for AoW:RT AI matches! Using it against real human does not guarantee you a win.
 
 ## Documentation
 ### Libraries
@@ -23,3 +25,15 @@ Unfortunately the way it is coded is so restrictive thus:
     * Lightning Arhat
     * Azure Dragon
     * Great Whale
+
+#### Workflow
+1. Art of War: Red Tides must be running in windows mode first
+2. Run/Compile the script (It will detect the game)
+3. Script will wait for next command, waiting for match to start
+4. Once match has started (After game's preload), the script will start running
+5. Script will end after the match has finished
+
+### To-do
+- Improve Bot versatility to work with more races/units (More actions)
+- Automatically starts a new AI match when end
+- Reduce code redundancies for better memory usage

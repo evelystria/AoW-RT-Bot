@@ -1,6 +1,6 @@
 import win32ui, win32process, win32gui, pyautogui, time, sys
 ##########################
-# Defining game constant #
+# DEFINE CONSTANTS #
 GAME_ACTIVE = False # Check whether game session is active
 MATCH_ACTIVE = False # Check whether player is in match
 MATCH_ENDED = False # Check if the match has ended
@@ -11,13 +11,15 @@ wave = 0 # Indicates the starting wave
 timer = 16 # Indicates the intermission between waves
 ##########################
 def matchend():
-    matchend = pyautogui.locateOnScreen('bin/end.png')
+    # Checks whether the match is completed (Victory/Defeat)
+    matchend = pyautogui.locateOnScreen('bin/victory.png')
     if matchend is not None:
         MATCH_ENDED = True
         print('\nMatch has ended!')
         sys.exit(0)
 
 def train_merc():
+    # Automates the training of mercenaries by clicking coordinates
     global wave
 
     if wave == 0:
@@ -61,6 +63,7 @@ def train_merc():
         print('Idle, gaining essence.')
 
 def ingame():
+    # This will control the bot's actions and such during match
     global timer, wave, MATCH_ENDED
     MATCH_ACTIVE = True
     # While match is active & in game
@@ -76,9 +79,10 @@ def ingame():
             matchend()
 
 def pregame():
+    # This will detect whether the match has started
     GAME_ACTIVE = True
     print('Waiting for match to start..')
-    # Waiting for match to start
+
     while (GAME_ACTIVE):
         matchstart = pyautogui.locateOnScreen('bin/start.png')
         # Once match has started
@@ -90,8 +94,7 @@ def pregame():
 def windowEnumerationHandler(hwnd, top_windows):
     top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
 
-def main():
-    # Find game window
+def found_gamewindow():
     window_handle = win32ui.FindWindow(None, u"Red Tides").GetSafeHwnd()
     # Get process id
     pid = win32process.GetWindowThreadProcessId(window_handle)[1]
@@ -113,9 +116,19 @@ def main():
         # Once game has been found, run func_pregame()
         pregame()
 
-    else:
-        print("-"*30)
-        print('Unable to find specific window. Make sure it is running.')
+def main():
+    # Runs the entire script, first locating the game window
+    # Get game's window
+    try:
+        window_handle = win32ui.FindWindow(None, u"Red Tides").GetSafeHwnd()
+        found_gamewindow()
+    except win32ui.error:
+        print('Waiting for game to run...')
+        while True:
+            try:
+                found_gamewindow()
+            except win32ui.error:
+                continue
 
 if __name__ == "__main__":
    main()

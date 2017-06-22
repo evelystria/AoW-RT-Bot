@@ -8,6 +8,7 @@ Note that this Bot is designed personally for AoW:RT AI matches! Using it agains
 ## Documentation
 ### Libraries
 - PyAutoGUI
+- Win32Gui
 ### Usage
 Since this bot is designed using PyAutoGUI for personal use, the script is not flawless and have many bugs. Technically, if memory hacking were to be used instead it would be much more effective.
 

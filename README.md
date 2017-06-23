@@ -15,17 +15,10 @@ Since this bot is designed using PyAutoGUI for personal use, the script is not f
 Unfortunately the way it is coded is so restrictive thus:
 * Supports ONLY
   * Resolution: 1280x720 @ windowed mode
-  * Atlac units of the following order:
-    * Silver Guardian
-    * Heavy Blade Slave
-    * Scholar
-    * Wrath Chanter
-    * Shadow Fish
-    * Staff Slave
-    * Vajra
-    * Lightning Arhat
-    * Azure Dragon
-    * Great Whale
+* Current keyboard/mouse coordinates are set to my own deck use
+  * You can however, make your own bot actions by getting their coordinates individually through
+    * pyautogui.displayMousePosition()
+
 
 #### Workflow
 1. Script can be run before or after the game has started

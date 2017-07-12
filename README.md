@@ -3,14 +3,14 @@
 
 This is part of my 'study-the-examples' series, of how certain things can be done in python through 3rd-party libraries. Scripts are designed as accord to me, and not for client use. You can however download and edit them to work on your computer.
 
-Note that this Bot is designed personally for AoW:RT AI matches! Using it against a real human does not guarantee you a win.
+Note that this Bot is designed for AoW:RT AI matches! Using it against a real human does not guarantee you a win.
 
 ## Documentation
 ### Libraries
 - PyAutoGUI
 - Win32Gui
 ### Usage
-Since this bot is designed using PyAutoGUI for personal use, the script is not flawless and have many bugs. Technically, if memory hacking were to be used instead it would be much more effective.
+Since this bot is designed using PyAutoGUI for personal use, the script is not flawless and have many bugs. Technically, if memory reading were to be used instead it would be much more effective.
 
 Unfortunately the way it is coded is so restrictive thus:
 * Supports ONLY
